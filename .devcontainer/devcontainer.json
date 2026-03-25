@@ -5,6 +5,9 @@
   "customizations": {
     "vscode": {
       "settings": {
+        // Python interpreter
+        "python.defaultInterpreterPath": "/usr/local/bin/python3",
+
         // Dark mode
         "workbench.colorTheme": "Default Dark Modern",
         "workbench.preferredDarkColorTheme": "Default Dark Modern",
