@@ -1,0 +1,54 @@
+{
+  "name": "Python 3.12",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        // Dark mode
+        "workbench.colorTheme": "Default Dark Modern",
+        "workbench.preferredDarkColorTheme": "Default Dark Modern",
+
+        // Kill all AI / Copilot features
+        "github.copilot.enable": { "*": false },
+        "github.copilot.editor.enableAutoCompletions": false,
+        "github.copilot.inlineSuggest.enable": false,
+        "github.copilot.chat.enabled": false,
+        "editor.inlineSuggest.enabled": false,
+
+        // Suppress Chat panel UI (Codespaces force-injects the extension,
+        // these settings prevent the panel from being usable / visible)
+        "chat.commandCenter.enabled": false,
+        "inlineChat.enabled": false,
+        "inlineChat.showToolbar": "never",
+        "workbench.commandPalette.experimental.suggestCommands": false,
+
+        // Disable IntelliCode & similar
+        "vsintellicode.features.python.deepLearning": "disabled",
+        "vsintellicode.modify.editor.suggestSelection": "none",
+
+        // Lightweight editor tweaks
+        "editor.minimap.enabled": false,
+        "extensions.ignoreRecommendations": true,
+        "telemetry.telemetryLevel": "off"
+      },
+
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+
+  // Jupyter notebook server
+  "forwardPorts": [8888],
+  "portsAttributes": {
+    "8888": {
+      "label": "Jupyter",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "postCreateCommand": "pip install --quiet jupyter && code --disable-extension GitHub.copilot --disable-extension GitHub.copilot-chat || true"
+}
