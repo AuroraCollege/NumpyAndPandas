@@ -50,5 +50,5 @@
     }
   },
 
-  "postCreateCommand": "pip install --quiet jupyter && code --disable-extension GitHub.copilot --disable-extension GitHub.copilot-chat || true"
+  "postCreateCommand": "pip install --quiet jupyter ipykernel && code --disable-extension GitHub.copilot --disable-extension GitHub.copilot-chat || true"
 }
